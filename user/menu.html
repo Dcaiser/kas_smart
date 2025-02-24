@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Menu</title>
+    <link href="../output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+
+</head>
+<body class="m-0">
+
+    <div class="w-full h-full flex flex-col items-center">
+    <nav class="w-full h-fit  flex flex-col fixed top-0 bg-amber-50">
+        <div class="w-full h-[39px] flex my-4 justify-between">
+            <form action="" class="flex justify-center gap-4">
+                <input type="search" name="cari" placeholder="cari produk" class="rounded-[10px] border-2 border-black md:w-[400px] sm:text-sm">
+                <button type="submit">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.5833 29.9179L19.7494 21.0839L19.4329 20.7675L19.0835 21.0471C18.4006 21.5933 17.6114 22.0292 16.7113 22.3523C15.8208 22.672 14.8696 22.8333 13.8542 22.8333C11.3344 22.8333 9.22029 21.9663 7.48116 20.2272C5.74203 18.488 4.875 16.374 4.875 13.8542C4.875 11.3344 5.74203 9.22029 7.48116 7.48116C9.22029 5.74203 11.3344 4.875 13.8542 4.875C16.374 4.875 18.488 5.74203 20.2272 7.48116C21.9663 9.22029 22.8333 11.3344 22.8333 13.8542C22.8333 14.8696 22.672 15.8208 22.3523 16.7113C22.0292 17.6114 21.5933 18.4006 21.0471 19.0835L20.7675 19.4329L21.0839 19.7494L29.9179 28.5833L28.5833 29.9179ZM13.8542 20.9167C15.8082 20.9167 17.4853 20.227 18.8562 18.8562C20.227 17.4853 20.9167 15.8082 20.9167 13.8542C20.9167 11.9002 20.227 10.2231 18.8562 8.85218C17.4853 7.4813 15.8082 6.79167 13.8542 6.79167C11.9002 6.79167 10.2231 7.4813 8.85218 8.85218C7.4813 10.2231 6.79167 11.9002 6.79167 13.8542C6.79167 15.8082 7.4813 17.4853 8.85218 18.8562C10.2231 20.227 11.9002 20.9167 13.8542 20.9167Z" fill="#1D1B20" stroke="black"/>
+                    </svg>
+                        
+                </button>
+            </form>
+            <div class="w-full h-full flex justify-end">
+                <button class=" p-4 text-white" id="toggleSidebar">
+                    <svg width="50" height="43" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4165 7.5835H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 18H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 28.4165H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+        
+            </div>
+
+        </div>
+        <div class="w-full h-fit flex justify-center gap-x-5 py-3">
+            <a href="" class="font-bold uppercase shadow-2xs active:text-gray-400 border-b-2">semua</a>
+            <a href="" class="font-bold uppercase shadow-2xs active:text-gray-400 border-b-2">minuman</a>
+            <a href="" class="font-bold uppercase shadow-2xs active:text-gray-400 border-b-2">makanan</a>
+        </div>
+    
+    </nav>
+    <div class="w-[95%] h-auto grid grid-cols-2 md:flex flex-wrap mt-32">
+        <div class="flex justify-center p-1">
+        <a  x-data="{open : false}" @click="open = true" class="w-[130px] h-[192px] md:w-[250px] md:h-[330px] overflow-hidden sm:h-[230px] flex flex-col justify-evenly items-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-2xl">
+            <div class="w-full h-[95%] flex flex-col items-center">
+                <div class="w-full h-[70px] sm:h-[152px] bg-gray-300 flex justify-center">
+                    <img src="./asset_poto/kopi.jpg" class="w-auto h-full">
+                </div>
+                <div class="w-full h-full flex flex-col justify-evenly items-center">
+                    <p class="text-red-600">Rp. 5000</p>
+                    <p class="font-semibold uppercase">kopi daong</p>
+                    <svg class="bg-[#010829] rounded-[30px]  h-auto" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 10V38M10 24H38" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+    
+                 </div>
+
+            </div>
+            <div x-show="open" x-transition x-cloak class="fixed inset-0 z-10 flex justify-center items-center backdrop-brightness-50">
+                <div @click.stop class="bg-white backdrop-blur-2xl rounded-lg p-6 w-[90%] h-[90%] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"  @click.outside="open = false ">
+                    <div class="flex justify-end">
+                        <button @click="open = false" class="p-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
+                    </div>
+                    <div class="w-full h-[90%] flex flex-col">
+                        <div class="w-full h-1/3 flex justify-center bg-gray-300">
+                            <img src="./asset_poto/kopi.jpg" class="w-auto h-full">
+                        </div>
+                        <div class="w-full h-auto my-4">
+                            <h1 class="text-1xl uppercase font-bold text-red-600">Rp. 50000</h1>                        
+                            <h1 class="text-2xl uppercase font-bold">kopi daong</h1>
+                        </div>
+                        <div class="flex h-1/3 justify-start">
+                            <div x-data="{ count: 0 }">                            
+                                <!-- Tombol untuk mengurangi jumlah -->
+                                <button 
+                                    @click="if(count > 0) count--" 
+                                    class="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-400 ml-4">-
+                                </button>
+                                <!-- Menampilkan input untuk jumlah -->
+                                    <input type="number" name="sum" id="jumlah" x-model="count" class="px-4 py-2 border border-gray-300 rounded text-center w-20" min="0" />                            
+                                <!-- Tombol untuk menambah jumlah -->
+                                <button @click="count++" class="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-400 ml-4">+
+                                </button>
+                                <textarea type="text" name="note" id="nota" placeholder="tambahkan catatan?" class="border-b-2 my-2 w-full p-2"></textarea>
+                                <button class="p-2 bg-amber-300 rounded-[10px] font-bold uppercase active:bg-amber-500">order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </a>
+        </div>
+                        
+    </div>
+    <div class="w-full h-[104px] my-4">
+        <button class="w-full md:h-[70px] h-[100px] active:bg-slate-700 fixed bg-orange-600 text-white font-bold bottom-0 my-4 flex items-center justify-evenly lg:right-0 border-b-2 border-t-2 border-l-2 border-orange-500">
+            <h1>Create Order: <span class="font-bold">1</span> item</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+        </button>
+
+    </div>
+    </div>
+    <aside id="sidebar" class="w-64 bg-gradient-to-b from-[#010829] to-[#030C33] text-white p-6 fixed inset-y-0 right-0 transform translate-x-full translate-x-0 transition-transform duration-300 ">
+        <buttton class="text-2xl font-semibold mb-6 text-white" id="close">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M37.5 12.5L12.5 37.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.5 12.5L37.5 37.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <a href="dashboard-user.html" class="block py-2 px-3 text-white border-y border-white hover:text-slate-500 flex">
+            <svg width="40" height="40" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.4165 7.5835H39.5832" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10.4165 18H39.5832" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10.4165 28.4165H39.5832" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>Dashboard
+            </a>
+        <a href="#" class=" py-2 px-3 my-7 hover:text-slate-500 flex text-white">
+            <svg  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg flex">
+                <path d="M25 5H31.6667C32.5507 5 33.3986 5.35119 34.0237 5.97631C34.6488 6.60143 35 7.44928 35 8.33333V31.6667C35 32.5507 34.6488 33.3986 34.0237 34.0237C33.3986 34.6488 32.5507 35 31.6667 35H25M16.6667 28.3333L25 20M25 20L16.6667 11.6667M25 20H5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>Log Out
+            </a>
+            
+
+    </aside>
+</body>
+<script>
+    const toggleButton = document.getElementById('toggleSidebar');
+           const sidebar = document.getElementById('sidebar');
+           const closebutton = document.getElementById('close')
+           
+           // Toggle sidebar visibility when hamburger is clicked
+           toggleButton.addEventListener('click', () => {
+               sidebar.classList.toggle('translate-x-full');
+           });
+   
+           // Close sidebar if clicked outside of sidebar
+           document.addEventListener('click', (e) => {
+               const isClickInside = sidebar.contains(e.target) || toggleButton.contains(e.target);
+               if (!isClickInside) {
+                   sidebar.classList.add('translate-x-full');
+               }
+           });
+           closebutton.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+
+           })
+           </script>
+
+
+</html>

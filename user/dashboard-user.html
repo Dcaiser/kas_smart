@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link href="../output.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="m-0 flex bg-[] bg-gradient-to-b from-[#010829] to-[#030C33]">
+    <div id="sidebar" class="w-64 bg-[#ffffff] text-black border-r-2 h-screen p-4 fixed inset-0 shadow-l z-10 p-1.5 transform -translate-x-full md:translate-x-0 transition-transform">
+        <div class="w-full h-[70px] flex justify-between ">
+        <img src="../asset_poto/kas_smart.png" alt="" class="w-auto rounded-full bg-neutral-300">
+        <button class="text-2xl font-semibold mb-6 lg:hidden" id="close">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M37.5 12.5L12.5 37.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.5 12.5L37.5 37.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        </div>
+        <ul class="h-[90%] w-full flex flex-col gap-4 font-semibold text-[20px] p-4">
+            <li><a href="dashboard.html" class="block py-2 px-3 text-black  hover:bg-slate-300 flex">
+                <svg width="40" height="40" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.4165 7.5835H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10.4165 18H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10.4165 28.4165H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                </svg>Dashboard
+                </a>
+            </li>
+            <li><a href="menu.html" class="block py-2 px-3 hover:bg-slate-300 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M3 2h2v20H3zm7 4h7v2h-7zm0 4h7v2h-7z"></path><path d="M19 2H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 18H8V4h11v16z"></path></svg>
+                menu
+                </a>
+            </li>
+
+
+            <li><a href="login.html" class="block py-2 px-3  hover:text-slate-500 flex text-black">
+                <svg  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg flex">
+                    <path d="M25 5H31.6667C32.5507 5 33.3986 5.35119 34.0237 5.97631C34.6488 6.60143 35 7.44928 35 8.33333V31.6667C35 32.5507 34.6488 33.3986 34.0237 34.0237C33.3986 34.6488 32.5507 35 31.6667 35H25M16.6667 28.3333L25 20M25 20L16.6667 11.6667M25 20H5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>Log Out
+                </a>
+            </li>
+        </ul>
+    </div>
+        
+    </div>
+    <div class="w-full h-full md:ml-64 ">
+        <nav class="w-full h-fit bg-[#D9D9D9] flex justify-between top-0">
+            <div class="w-2/4 h-full flex items-center">
+                <button class=" p-4 text-white md:hidden" id="toggleSidebar">
+                    <svg width="50" height="43" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4165 7.5835H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 18H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 28.4165H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+        
+                </button>
+            </div>
+            <div class="flex items-center">
+                <h4>nama user</h4>
+                
+                <!--poto profil sesuaikan-->
+                <svg width="45" height="40" viewBox="0 0 45 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.625 17.5C5.625 8.1802 13.1802 0.625 22.5 0.625C31.8198 0.625 39.375 8.1802 39.375 17.5C39.375 26.8198 31.8198 34.375 22.5 34.375C13.1802 34.375 5.625 26.8198 5.625 17.5Z" fill="#7E869E" fill-opacity="0.25"/>
+                    <circle cx="22.5" cy="13.75" r="7.5" fill="#222222"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M34.2492 29.3552C34.3059 29.4524 34.2882 29.5754 34.2071 29.6535C31.1728 32.5771 27.0463 34.375 22.4999 34.375C17.9536 34.375 13.8272 32.5772 10.7929 29.6536C10.7118 29.5756 10.6941 29.4525 10.7508 29.3553C12.9029 25.6617 17.3558 23.125 22.5 23.125C27.6442 23.125 32.0971 25.6616 34.2492 29.3552Z" fill="#222222"/>
+                    </svg>
+                    
+            </div>
+        </nav>
+        <div class="w-full h-full flex justify-center mt-10">
+            <div class="w-full h-full flex flex-col items-center my-2">
+                <div class="w-[90%] h-1/4 flex flex-col justify-evenly items-center ">
+                    <h2 class="text-[30px] font-poppins text-white">Dashboard</h2>
+                    <p class="bg-[#D9D9D9] px-6">Anda Login Sebagai user</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-start my-4 h-fit p-4">
+            <a href="" class="bg-white p-3 rounded-tr-lg rounded-br-lg rounded-bl-lg font-bold capitalize hover:bg-gray-400 active:bg-gray-500">+ buat laporan</a>
+        </div>
+    
+        <div class="w-full flex justify-center p-4">
+            <div class="w-full h-auto flex items-center flex-col">
+                <table class="w-full h-fit text-sm lg:text-lg ">
+                    <thead class="py-9">
+                    <tr class="bg-blue-800 text-center text-white uppercase font-bold ">
+                        <td colspan="5" class="py-4"><h1>laporan penjualan</h1></td>
+                    </tr>
+                    <tr class="bg-blue-800 p-4 text-center text-white capitalize">
+                        <td>no.</td>
+                        <td>Tanggal</td>
+                        <td>pendapatan bersih</td>
+                        <td>pengeluaran</td>
+                        <td>total</td>
+                    </tr>
+                    </thead>
+    
+                    <tbody>
+                    <tr class="bg-amber-50 text-center hover:bg-gray-300" x-data="{ open: false }" @click="open = true">
+                        <td class="py-6">1.</td>
+                        <td>13-2-2025</td>
+                        <td>Rp. <span>5000000</span></td>
+                        <td>Rp. <span>10000</span></td>
+                        <td>Rp. <span>40000</span></td>
+                        <td>
+                            <div x-show="open" x-transition x-cloak class="fixed inset-0 flex items-center justify-center z-20  backdrop-brightness-50" >
+                                <div @click.stop class="bg-white rounded-lg p-6 w-[90%] h-[85%] overflow-y-auto" @click.outside="open = false">
+                                  <div class="flex justify-end">
+                                      <button @click="open = false" class=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
+                                  </div>
+                                  <div class="flex flex-col w-full h-full items-center gap-y-3  text-sm">
+                                    <!-- card -->
+                                    <div class="w-[95%] h-[300px] bg-gray-300 flex flex-col p-4">
+                                        <div class="flex justify-between">
+                                            <h1 class="text-lg font-bold">20134</h1>
+                                            <h1 class="">13-2-2025, 14.00</h1>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-2">
+                                            <h1 class="">nama kasir: <span class=""></span></h1>
+                                            <h1 class="">nama pelanggan: <span class=""></span></h1>
+                                            <h1 class="">jumlah transaksi: <span class=""></span></h1>
+                                            <h1 class="">total pemasukan: <span class=""></span></h1>
+                                        </div>
+                                    </div>
+    
+                                    <div class="w-[95%] h-[300px] bg-gray-300 flex flex-col p-4">
+                                        <div class="flex justify-between">
+                                            <h1 class="text-lg font-bold">20134</h1>
+                                            <h1 class="">13-2-2025, 14.00</h1>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-2">
+                                            <h1 class="">nama kasir: <span class=""></span></h1>
+                                            <h1 class="">nama pelanggan: <span class=""></span></h1>
+                                            <h1 class="">jumlah transaksi: <span class=""></span></h1>
+                                            <h1 class="">total pemasukan: <span class=""></span></h1>
+                                        </div>
+                                    </div>
+                                    <div class="w-[95%] h-[300px] bg-gray-300 flex flex-col p-4">
+                                        <div class="flex justify-between">
+                                            <h1 class="text-lg font-bold">20134</h1>
+                                            <h1 class="">13-2-2025, 14.00</h1>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-2">
+                                            <h1 class="">nama kasir: <span class=""></span></h1>
+                                            <h1 class="">nama pelanggan: <span class=""></span></h1>
+                                            <h1 class="">jumlah transaksi: <span class=""></span></h1>
+                                            <h1 class="">total pemasukan: <span class=""></span></h1>
+                                        </div>
+                                    </div>
+                                    <div class="w-[95%] h-[300px] bg-gray-300 flex flex-col p-4">
+                                        <div class="flex justify-between">
+                                            <h1 class="text-lg font-bold">20134</h1>
+                                            <h1 class="">13-2-2025, 14.00</h1>
+                                        </div>
+                                        <div class="flex flex-col items-start gap-2">
+                                            <h1 class="">nama kasir: <span class=""></span></h1>
+                                            <h1 class="">nama pelanggan: <span class=""></span></h1>
+                                            <h1 class="">jumlah transaksi: <span class=""></span></h1>
+                                            <h1 class="">total pemasukan: <span class=""></span></h1>
+                                        </div>
+                                    </div>
+    
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="" class="p-4 text-white underline capitalize active:text-gray-400 transition">lihat semua</a>
+    
+            </div>
+            
+        </div>
+    
+    </div>
+</body>
+<script src="../main.js"></script>
+</html>

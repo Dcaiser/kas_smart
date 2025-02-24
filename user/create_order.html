@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link href="../output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+</head>
+<body>
+    <nav class="w-full  flex items-center  fixed top-0 bg-white border-b-2 border-black">
+        <button onclick="window.location.href='menu.html'">
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.4116 18.9585L19.5783 27.1252L17.5002 29.1668L5.8335 17.5002L17.5002 5.8335L19.5783 7.87516L11.4116 16.0418H29.1668V18.9585H11.4116Z" fill="#1D1B20"/>
+            </svg>
+        </button>
+    </nav>
+    <div class="w-full h-auto flex flex-col items-center  font-poppins mb-[104px] mt-[40px]">
+        <div class="w-[95%] h-2/4 flex flex-col gap-5 ">
+            <div class="flex justify-between">
+            <h2 class="font-bold text-[20px] uppercase">Order:</h2>
+            <a href="" class="p-2 text-red-500 active:text-red-800 rounded-lg text-sm">batalkan pesanan</a>
+            </div>
+
+            <!-- item card -->
+            <div class="w-full h-[100px] rounded-lg flex items-center p-2 gap-2 overflow-hidden shadow-[3.0px_3.0px_4.0px_rgba(0,0,0,0.38)]">
+                <div class="w-1/3 h-full flex items-center justify-center ">
+                    <div class=" bg-cover rounded-lg w-full h-full p-2">
+                        <img src="asset_poto/saitama-dark-3840x2160-19846 (1).png" alt="" class="h-full w-auto">
+                    </div>
+                </div>
+                <div class="w-1/3 text-sm">
+                    <h2 class="font-bold">kopi daong</h2>
+                    <p>harga: <span class="font-bold">Rp.5000</span></p>
+                    <p class="">jumlah: <span class="font-bold">2</span></p>
+                    <p class="">total harga: <span class="font-bold"> Rp.20000</span></p>
+                </div>
+                <div class=" items-center  w-1/3">
+                    <a href="" class="text-red-500 p-5 capitalize">hapus</a>
+                </div>
+            </div>  
+            <!-- /item card           -->
+
+
+        </div>
+        <div class="w-full h-fit my-4 p-4 flex justify-end">
+            <a href="" class="text-green-600 active:text-green-800">+tambah pesanan</a>
+        </div>
+        <div class="w-[90%] h-[150px] flex flex-col gap-4 mt-2" id="payment">
+            <div class="w-full flex justify-start p-4">
+                <label for="cutomer">nama pelanggan: </label>
+                <input type="text" name="customer" class="border-b-2 focus:border-none bg-gray-200 w-full" id="">
+            </div>
+    
+            <h2 class="font-light">Payment Method:</h2>
+            <select class="bg-[#E3E3E3] p-5" name="paymethod">
+                <option value="1">cash</option>
+                <option value="1">qris</option>
+
+            </select>
+
+        </div>
+
+    </div>
+    <div class="w-full h-[104px] my-4 flex flex-col">
+        <button class="fixed right-0 top-0 " onclick="window.location.href = '#payment'">ke</button>
+        <button class="w-full h-[104px] active:bg-slate-700 fixed bg-orange-600 text-white bottom-0 p-5 my-4 flex items-center justify-between">
+            <h1 class="uppercase">Checkout</h1>
+            <h1>Total Harga: <span class="font-bold" >Rp. 5000</span></h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" style="fill: #fff;transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+        </button>
+
+    </div>
+</body>
+<script>
+    let quantityInput = document.getElementById('quantity');
+    let decreaseBtn = document.getElementById('decreaseBtn');
+    let increaseBtn = document.getElementById('increaseBtn');
+
+    decreaseBtn.addEventListener('click', () => {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue - 1;
+    });
+
+    increaseBtn.addEventListener('click', () => {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
+    });
+</script>
+</html>
