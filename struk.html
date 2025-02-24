@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Struk Pesanan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="w-full h-screen container mx-auto p-6 flex flex-col justify-center">
+        <!-- Form Pesanan -->
+        <div class="max-w-lg mx-auto bg-white p-6 rounded shadow-lg" id="forem">
+            <form id="orderForm">
+                <div class="mb-4">
+                    <label for="productName" class="block text-lg font-medium text-gray-700">Nama Produk</label>
+                    <input type="text" id="productName" class="w-full px-4 py-2 mt-2 border rounded-lg" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="quantity" class="block text-lg font-medium text-gray-700">Jumlah</label>
+                    <input type="number" id="quantity" class="w-full px-4 py-2 mt-2 border rounded-lg" required min="1">
+                </div>
+
+                <div class="mb-4">
+                    <label for="price" class="block text-lg font-medium text-gray-700">Harga Satuan (Rp)</label>
+                    <input type="number" id="price" class="w-full px-4 py-2 mt-2 border rounded-lg" required min="1">
+                </div>
+
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg mt-4">Proses Pesanan</button>
+            </form>
+        </div>
+
+        <!-- Struk Pesanan -->
+        <div id="receipt" class="hidden mt-6 max-w-lg mx-auto bg-white p-6 rounded shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-4">Struk Pesanan</h2>
+            <div id="receiptDetails"></div>
+            <div class="mt-4">
+                <p class="text-lg font-semibold">Total: <span id="totalAmount" class="text-xl font-bold"></span></p>
+            </div>
+
+            <!-- Tombol Print -->
+            <div class="mt-4 text-center">
+                <button id="printButton" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg">Print Struk</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event listener untuk form
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Menghindari reload halaman
+
+            // Mengambil input data dari form
+            const productName = document.getElementById('productName').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const price = parseInt(document.getElementById('price').value);
+
+            // Menghitung total harga
+            const totalPrice = quantity * price;
+            document.getElementById('forem').style.display = 'none';
+
+            // Menampilkan struk pesanan
+            const receiptDetails = document.getElementById('receiptDetails');
+            const totalAmount = document.getElementById('totalAmount');
+            const receipt = document.getElementById('receipt');
+
+            receiptDetails.innerHTML = `
+                <p><strong>Produk:</strong> ${productName}</p>
+                <p><strong>Jumlah:</strong> ${quantity}</p>
+                <p><strong>Harga Satuan:</strong> Rp ${price.toLocaleString()}</p>
+                <p><strong>Total Harga:</strong> Rp ${totalPrice.toLocaleString()}</p>
+            `;
+
+            totalAmount.textContent = `Rp ${totalPrice.toLocaleString()}`;
+
+            // Menampilkan struk pesanan
+            receipt.classList.remove('hidden');
+        });
+
+        // Fungsi untuk mencetak struk pesanan
+        document.getElementById('printButton').addEventListener('click', function() {
+            window.print(); // Memanggil jendela cetak
+        });
+    </script>
+
+</body>
+</html>

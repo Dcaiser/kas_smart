@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah metode pembayaran</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins">
+    <nav class="w-full h-[70px] flex fixed top-0">
+        <div class="h-full flex items-center">
+            <button class="absolute " onclick="window.location=('laporan_keuangan.html');">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.4116 18.9585L19.5783 27.1252L17.5002 29.1668L5.8335 17.5002L17.5002 5.8335L19.5783 7.87516L11.4116 16.0418H29.1668V18.9585H11.4116Z" fill="#1D1B20"/>
+                </svg>
+            </button>
+        </div>
+        <div class="w-full h-full flex items-center justify-center font-semibold font-poppins">
+            <h1>pilih metode</h1>
+        </div>
+    </nav>
+    <div class="w-full h-screen gap-2 flex justify-center items-center mt-7">
+        <div class="w-full h-[70%] items-center grid grid-col-2 ">
+            <div class="w-full h-1/2 p-4 flex justify-center">
+                <button onclick="window.location.href = 'wallet_method.html'" class="w-full h-full md:h-full md:w-[40%] p-4 flex rounded-lg [box-shadow:_1px_1px_5px_#000000] active:bg-gray-300 active:shadow-none">
+                    <div class="flex w-1/3 justify-center items-center border-r-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20 3H5C3.346 3 2 4.346 2 6v12c0 1.654 1.346 3 3 3h15c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19c-.552 0-1-.449-1-1V6c0-.551.448-1 1-1h15v3h-6c-1.103 0-2 .897-2 2v4c0 1.103.897 2 2 2h6.001v3H5zm15-9v4h-6v-4h6z"></path></svg>
+                    </div>    
+                    <div class="w-full flex items-center justify-center">
+                        <h1 class="font-bold">e-wallet</h1>
+                    </div>
+                </button>
+    
+            </div>
+            <div class="w-full h-1/2 p-4 flex justify-center">
+                <button onclick="window.location.href = 'atm_method.html'" class="w-full h-full md:w-[40%] p-4 flex rounded-lg  [box-shadow:_1px_1px_5px_#000000] active:bg-gray-300 active:shadow-none">
+                    <div class="flex w-1/3 justify-center items-center border-r-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M2 8v4.001h1V18H2v3h16l3 .001V21h1v-3h-1v-5.999h1V8L12 2 2 8zm4 10v-5.999h2V18H6zm5 0v-5.999h2V18h-2zm7 0h-2v-5.999h2V18zM14 8a2 2 0 1 1-4.001-.001A2 2 0 0 1 14 8z"></path></svg>                </div>    
+                    <div class="w-full flex items-center justify-center">
+                        <h1 class="font-bold">atm</h1>
+                    </div>
+    
+            </button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

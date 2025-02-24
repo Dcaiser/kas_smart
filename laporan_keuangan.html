@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metode pembayaran</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="flex scroll-m-0">
+    <div id="sidebar" class="w-64 bg-[#fff] text-black h-screen z-10 p-4 fixed inset-0  border-r-2 shadow-l p-1.5 transform -translate-x-full md:translate-x-0 transition-transform">
+        <div class="w-full h-[70px] flex justify-between ">
+        <img src="./asset_poto/kas_smart.png" alt="" class="w-auto rounded-full bg-neutral-300">
+        <button class="text-2xl font-semibold mb-6 lg:hidden" id="close">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M37.5 12.5L12.5 37.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.5 12.5L37.5 37.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        </div>
+        <ul class="h-[90%] w-full flex flex-col justify-evenly font-semibold text-[20px]">
+            <li><a href="dashboard.html" class="block py-2 px-3 text-black border-y-2  border-black hover:text-slate-500 flex">
+                <svg width="40" height="40" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.4165 7.5835H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10.4165 18H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M10.4165 28.4165H39.5832" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                </svg>Dashboard
+                </a>
+            </li>
+            <li><a href="laporan_keuangan.html" class="block py-2 px-3  border-b-2 border-t-2 border-black hover:text-slate-500 flex">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.00001 10.8333V10.8333C5.00001 9.74772 5.00001 9.20492 5.13886 8.76455C5.43319 7.83106 6.1644 7.09984 7.09789 6.80551C7.53827 6.66667 8.08107 6.66667 9.16668 6.66667L32.3333 6.66667C32.8047 6.66667 33.0404 6.66667 33.1869 6.81311C33.3333 6.95956 33.3333 7.19526 33.3333 7.66667V9C33.3333 11.8284 33.3333 13.2426 32.4547 14.1213C31.576 15 30.1618 15 27.3333 15H25M5.00001 10.8333V10.8333C5.00001 11.9189 5.00001 12.4617 5.13886 12.9021C5.43319 13.8356 6.1644 14.5668 7.09789 14.8612C7.53827 15 8.08107 15 9.16668 15L33 15C33.9428 15 34.4142 15 34.7071 15.2929C35 15.5858 35 16.0572 35 17L35 21.6667M5.00001 10.8333L5.00001 31C5.00001 32.8856 5.00001 33.8284 5.5858 34.4142C6.17158 35 7.11439 35 9.00001 35L33 35C33.9428 35 34.4142 35 34.7071 34.7071C35 34.4142 35 33.9428 35 33L35 28.3333M35 28.3333H27C26.0572 28.3333 25.5858 28.3333 25.2929 28.0404C25 27.7475 25 27.2761 25 26.3333V23.6667C25 22.7239 25 22.2525 25.2929 21.9596C25.5858 21.6667 26.0572 21.6667 27 21.6667H35M35 28.3333L35 21.6667" stroke="black" stroke-width="2"/>
+                </svg> payment
+                </a>
+            </li>
+            <li><a href="daftar_produk.html" class="block py-2 px-3  border-b-2 border-t-2 border-black hover:text-slate-500 flex">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.9998 35V21.6667M19.9998 35L7.60651 27.2542C7.14698 26.967 6.91722 26.8234 6.79186 26.5972C6.6665 26.371 6.6665 26.1001 6.6665 25.5582V13.3333M19.9998 35L26.6665 30.8333L32.3932 27.2542C32.8527 26.967 33.0825 26.8234 33.2078 26.5972C33.3332 26.371 33.3332 26.1001 33.3332 25.5582V13.3333M19.9998 21.6667L6.6665 13.3333M19.9998 21.6667L33.3332 13.3333M6.6665 13.3333L18.9398 5.6625C19.4553 5.34033 19.713 5.17925 19.9998 5.17925C20.2866 5.17925 20.5444 5.34033 21.0598 5.6625L33.3332 13.3333" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M25.6668 24.1665C25.6668 24.7188 26.1145 25.1665 26.6668 25.1665C27.2191 25.1665 27.6668 24.7188 27.6668 24.1665H25.6668ZM25.7268 16.9123L25.1968 17.7603L25.7268 16.9123ZM26.5415 17.5693L27.4161 17.0845L26.5415 17.5693ZM12.8035 10.0145L25.1968 17.7603L26.2568 16.0643L13.8635 8.31851L12.8035 10.0145ZM27.6668 24.1665V18.6083H25.6668V24.1665H27.6668ZM25.1968 17.7603C25.4425 17.9139 25.5672 17.9931 25.6511 18.0574C25.7181 18.1087 25.6938 18.1028 25.6668 18.0541L27.4161 17.0845C27.2638 16.8097 27.0619 16.6189 26.8678 16.4701C26.6906 16.3342 26.4706 16.198 26.2568 16.0643L25.1968 17.7603ZM27.6668 18.6083C27.6668 18.3562 27.6679 18.0974 27.6466 17.8752C27.6233 17.6317 27.5685 17.3594 27.4161 17.0845L25.6668 18.0541C25.6398 18.0054 25.6477 17.9817 25.6557 18.0657C25.6658 18.1709 25.6668 18.3186 25.6668 18.6083H27.6668Z" fill="black"/>
+                </svg>Produk
+                </a>
+            </li>
+            <li><a href="manage_user.html" class="block py-2 px-3  border-b-2 border-t-2 border-black hover:text-slate-500 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
+                user
+                </a>
+            </li>
+            <li><a href="menu_adm.html" class="block py-2 px-3  border-b-2 border-t-2 border-black hover:text-slate-500 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M3 2h2v20H3zm7 4h7v2h-7zm0 4h7v2h-7z"></path><path d="M19 2H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 18H8V4h11v16z"></path></svg>
+                menu
+                </a>
+            </li>
+
+
+            <li><a href="#" class="block py-2 px-3  hover:text-slate-500 flex text-black">
+                <svg  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg flex">
+                    <path d="M25 5H31.6667C32.5507 5 33.3986 5.35119 34.0237 5.97631C34.6488 6.60143 35 7.44928 35 8.33333V31.6667C35 32.5507 34.6488 33.3986 34.0237 34.0237C33.3986 34.6488 32.5507 35 31.6667 35H25M16.6667 28.3333L25 20M25 20L16.6667 11.6667M25 20H5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>Log Out
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="w-full h-screen md:ml-64">
+        <nav class="w-full h-auto border-b-2  flex items-center fixed md:hidden">
+            <div class="w-2/4 h-full flex items-center ">
+                <button class=" p-4 text-white md:hidden" id="toggleSidebar">
+                    <svg width="50" height="43" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4165 7.5835H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 18H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.4165 28.4165H39.5832" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+        
+                </button>
+            </div>
+            <div class="w-2/4 h-full flex items-center justify-end">
+                <div class="">
+                    
+                </div>
+            </div>
+        </nav>
+        <div class="w-full flex flex-col p-4 mt-20">
+            <div class="w-full h-fit font-bold capitalize lg:text-3xl text-md flex justify-between">
+                <h1 class="">metode pembayaran</h1>
+            </div>
+            <div class="w-full p-4 ">
+                <a href="tambah_metode.html" class="p-2 text-green-400 ">+tambah payment</a>
+            </div>
+
+            <div class="w-full flex flex-wrap">
+            <!-- tampilkan metode pembayaran -->
+            <div x-data="{card : false}" class="w-full md:w-1/2 lg:w-1/3 p-3 flex justify-center">
+                <div @click="card = true" class="w-full h-[95px] rounded-md [box-shadow:_1px_1px_5px_#000000] p-2 flex justify-between items-center active:bg-gray-300 active:shadow-none">
+                    <div class="w-1/2 h-full">
+                        <img src="./asset_poto/qris.jpg" alt="" class="p-2 h-full">
+                    </div>
+                    <div class="w-1/2 p-4 text-sm">
+                        <h1 class="font-bold ">qris</h1>
+                        <p class="text-gray-400">no: <span class="">54364</span> </p>
+                        <p class="text-gray-400">nama:</p>
+                    </div>
+                </div>
+                <div x-show="card" x-transition x-cloak class="fixed inset-0 z-10 flex justify-center items-center backdrop-brightness-50">
+                    <div @click.stop class="w-[85%] h-[85%] bg-amber-50 p-4 rounded-lg" @click.outside="card = false">
+                        <div @click="card = false" class="flex justify-end"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></div>
+                        <div class="w-full h-auto flex justify-center">
+                            <div class="w-[300px] h-full rounded-[10px] flex justify-center items-center">
+                                <form action="" class="w-full h-[95%] flex flex-col items-center gap-7" enctype="multipart/form-data">
+                                    <div class="w-[95%] h-auto flex flex-col">
+                                        <input type="text" name="nama" placeholder="nama" class=" py-2 w-full border-b-2">
+                                    </div>
+                                    <div class="w-[95%] h-auto flex flex-col">
+                                        <input type="number" name="norek" placeholder="no rek" class=" py-2 w-full border-b-2">
+                                    </div>
+                                    <div class="w-[95%] h-auto flex flex-col">
+                                        <textarea class=" bg-white border-b-2 h-24" name="deskripsi" placeholder="deskripsi"></textarea>
+                                    </div>
+                                    <div class="w-full h-auto flex justify-evenly items-end">
+                                        <button type="submit" class="bg-green-500 p-4 rounded-[10px] uppercase font-semibold active:bg-sky-800">simpan</button>
+                                        <button type="submit" class="bg-red-500 p-4 rounded-[10px] uppercase font-semibold active:bg-sky-800">hapus</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div x-data="{card : false}" class="w-full md:w-1/2 lg:w-1/3 p-3 flex ">
+                <div @click="card = true" class="w-full h-[95px] rounded-md [box-shadow:_1px_1px_5px_#000000] p-2 flex justify-between items-center active:bg-gray-300 active:shadow-none">
+                    <div class="w-1/2 h-full">
+                        <img src="./asset_poto/mandiri.jpg" alt="" class="h-full p-2">
+                    </div>
+                    <div class="w-1/2 p-4 text-sm">
+                        <h1 class="font-bold ">qris</h1>
+                        <p class="text-gray-400">no: <span class=""></span> </p>
+                        <p class="text-gray-400">nama:</p>
+                    </div>
+                </div>
+                <div x-show="card" x-transition x-cloak class="fixed inset-0 z-10 flex justify-center items-center backdrop-brightness-50">
+                    <div @click.stop class="w-[85%] h-[85%] bg-amber-50 p-4 rounded-lg" @click.outside="card = false">
+                        <div @click="card = false" class="flex justify-end"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./main.js"></script>
+
+</html>

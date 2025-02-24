@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Produk</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins">
+    <nav class="w-full h-[70px] flex">
+        <div class="h-full flex items-center">
+            <button class="absolute" onclick="window.history.back()">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.4116 18.9585L19.5783 27.1252L17.5002 29.1668L5.8335 17.5002L17.5002 5.8335L19.5783 7.87516L11.4116 16.0418H29.1668V18.9585H11.4116Z" fill="#1D1B20"/>
+                </svg>
+            </button>
+        </div>
+        <div class="w-full h-full flex items-center justify-center font-semibold font-poppins">
+            <h1>Tambah Produk</h1>
+        </div>
+    </nav>
+    <div class="w-full h-auto flex justify-center">
+        <div class="w-[300px] h-full rounded-[10px] flex justify-center items-center">
+            <form action="" class="w-full h-[95%] flex flex-col items-center gap-7" enctype="multipart/form-data">
+                <div class="w-full h-[150px] flex justify-center items-center my-2 flex-col">
+                    <label id="file-title" for="file" class="w-[190px] h-[152px] bg-gray-300 flex flex-col items-center justify-evenly">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 10V38M10 24H38" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h2 class="font-poppins font-semibold">tambah gambar</h2>
+                    </label>
+                    <input type="file" accept=".jpg, .jpeg, .png" id="file" name="gambar" class="hidden ">
+                    <span id="file-name" class="ml-4 text-blak">No file chosen</span>
+                </div>
+                <div class="w-[95%] h-auto flex flex-col">
+                    <input type="text" name="harga" placeholder="Harga" class=" py-2 w-full border-b-2">
+                </div>
+                <div class="w-[95%] h-auto flex flex-col">
+                    <input type="text" name="nama" placeholder="nama barang" class=" py-2 w-full border-b-2">
+                </div>
+                <div class="w-[95%] h-auto flex flex-col bg-gray-400 capitalize">
+                    <select name="kategori" id="" class="focus:border-none">
+                        <option value="">makanan</option>
+                        <option value="">minuman</option>
+                    </select>
+                </div>
+                <div class="w-[95%] h-auto flex flex-col">
+                    <textarea class=" bg-white border-b-2 h-24" name="deskripsi" placeholder="deskripsi"></textarea>
+                </div>
+                <div class="w-[95%] h-auto flex flex-col items-end">
+                    <button type="reset" id="reset-button" placeholder="berapa stok produknya?" class="rounded-[10px] p-3 my-4 w-[100px] bg-[#D9D9D9] active:bg-slate-500">reset</button>
+                </div>
+                <div class="w-full h-auto flex justify-evenly items-end">
+                    <button type="submit" class="bg-green-500 p-4 rounded-[10px] uppercase font-semibold active:bg-sky-800">simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+          // JavaScript untuk menampilkan nama file yang dipilih
+          document.getElementById('file').addEventListener('change', function(event) {
+        const fileName = event.target.files[0]?.name || 'No file chosen';
+        document.getElementById('file-name').textContent = fileName;
+        const judul = document.getElementById('file-title');
+          judul.style.display = 'none'; 
+      });
+  
+      document.getElementById('reset-button').addEventListener('click', function() {
+      const fileInput = document.getElementById('file');
+      fileInput.value = ''; // Reset file input
+      document.getElementById('file-name').textContent = 'No file chosen'; // Reset nama file yang ditampilkan
+      const judul = document.getElementById('file-title');
+          judul.style.display = 'flex'; 
+  
+  });
+  
+  </script>
+</html>
